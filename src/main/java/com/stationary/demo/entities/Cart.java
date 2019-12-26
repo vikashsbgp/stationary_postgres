@@ -22,10 +22,4 @@ public class Cart extends AbstractEntity {
 		this.product = products;
 	}
 
-	@Override
-	public String toString() {
-		return "Cart [products=" + product + "]";
-	}
-
-
 }

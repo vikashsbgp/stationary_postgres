@@ -1,24 +1,18 @@
-package com.stationary.demo.entities;
+package com.stationary.demo.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import org.springframework.stereotype.Component;
 
-@Entity
-public class Address extends AbstractEntity {
-	
+@Component
+public class AddressResponseDTO {
+
+	private long id;
 	private String street;
 	private String city;
 	private String state;
 	private String zipcode;
 	private String country;
 	private boolean defaultAddress;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="user_id")
-	private User user;
-	
+
 	public String getStreet() {
 		return street;
 	}
@@ -59,12 +53,12 @@ public class Address extends AbstractEntity {
 		this.country = country;
 	}
 
-	public User getUser() {
-		return user;
+	public long getId() {
+		return id;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public boolean isDefaultAddress() {
@@ -74,8 +68,5 @@ public class Address extends AbstractEntity {
 	public void setDefaultAddress(boolean defaultAddress) {
 		this.defaultAddress = defaultAddress;
 	}
-
-
-
 
 }

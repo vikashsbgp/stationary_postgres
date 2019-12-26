@@ -2,7 +2,6 @@ package com.stationary.demo.entities;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,11 +29,10 @@ public class User extends AbstractEntity {
 	private String mobile;
 	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-	private List<Address> addresses =new ArrayList<>();
+	private List<Address> addresses = new ArrayList<>();
 	
 	@OneToMany(mappedBy="user", cascade = CascadeType.ALL)
 	private List<Order> order = new ArrayList<>();
-	
 	
 	@OneToOne
 	private Cart cart = null;
@@ -135,8 +133,5 @@ public class User extends AbstractEntity {
 	public void setOrder(List<Order> order) {
 		this.order = order;
 	}
-
-
-	
 
 }
