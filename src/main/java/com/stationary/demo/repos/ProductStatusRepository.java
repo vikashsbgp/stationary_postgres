@@ -24,5 +24,9 @@ public interface ProductStatusRepository extends JpaRepository<ProductStatus, Lo
 	
 	@Query(value = "SELECT * FROM product_status ps where ps.order_id=:order_id", nativeQuery = true)
 	public List<ProductStatus> findByOrderId(@Param("order_id") String order_id);
+	
+	@Query(value = "select * from product_status where user_id=:user_id and order_id=:order_id and product_id=:product_id", nativeQuery = true)
+	ProductStatus findByUserOrderProduct(@Param("user_id") long user_id,@Param("order_id") String order_id,@Param("product_id") long product_id);
+	
 
 }

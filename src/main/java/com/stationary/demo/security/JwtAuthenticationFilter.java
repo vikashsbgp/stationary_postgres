@@ -73,6 +73,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         
         LOGGER.info("Sending the access token in response header");
         response.addHeader(JwtProperties.HEADER_STRING, JwtProperties.TOKEN_PREFIX + token);
-        response.getWriter().write(mapper.writeValueAsString("Authorization:" + JwtProperties.TOKEN_PREFIX + token));
+        response.getWriter().write(mapper.writeValueAsString("Authorization: " + JwtProperties.TOKEN_PREFIX + token));
+      
     }
 }

@@ -16,5 +16,10 @@ public class CartResponseDTO {
 	public void setProducts(List<ProductResponseDTO> products) {
 		this.products = products;
 	}
+
+	@Override
+	public String toString() {
+		return "CartResponseDTO [products=" + products + "]";
+	}
 	
 }

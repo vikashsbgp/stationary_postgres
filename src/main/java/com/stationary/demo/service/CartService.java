@@ -10,6 +10,8 @@ public interface CartService {
 	
 	public List<Product> getCart(User user);
 	
-	CartResponseDTO addToCart(List<Product> products);
+	CartResponseDTO addToCart(Boolean edit, Integer quantity, Product products);
+	
+	public void deleteCart(long product_id);
 
 }

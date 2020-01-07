@@ -60,5 +60,11 @@ public class UserResponseDTO {
 		this.address = address;
 	}
 
+	@Override
+	public String toString() {
+		return "UserResponseDTO [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", mobile=" + mobile + ", address=" + address + "]";
+	}
+
 
 }

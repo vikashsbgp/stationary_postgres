@@ -52,7 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.addFilter(new JwtAuthenticationFilter(authenticationManager()))
 				.addFilter(new JwtAuthorizationFilter(authenticationManager(), this.userRepository))
 				.authorizeRequests()
-				.antMatchers("/user")
+				.antMatchers("/user","/products", "/products/*")
 				.permitAll()
 				.antMatchers("/create", "/delete")
 				.hasRole("ADMIN")

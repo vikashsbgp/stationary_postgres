@@ -42,6 +42,12 @@ public class ProductStatus extends AbstractEntity {
 		this.order_id = order_id;
 	}
 
+	@Override
+	public String toString() {
+		return "ProductStatus [status=" + status + ", user_id=" + user_id + ", product_id=" + product_id + ", order_id="
+				+ order_id + "]";
+	}
+
 	
 
 }

@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.stationary.demo.entities.User;
 
+@SuppressWarnings("serial")
 public class UserPrincipal implements UserDetails {
 
     @Autowired

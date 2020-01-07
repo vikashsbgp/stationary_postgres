@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class OrderResponseDTO {
-
 	private String id;
 	private List<ProductResponseDTO> products;
 	private long user_id;
@@ -42,6 +41,12 @@ public class OrderResponseDTO {
 
 	public void setAddress(AddressResponseDTO address) {
 		this.address = address;
+	}
+
+	@Override
+	public String toString() {
+		return "OrderResponseDTO [id=" + id + ", products=" + products + ", user_id=" + user_id + ", address=" + address
+				+ "]";
 	}
 
 }

@@ -75,6 +75,12 @@ public class Address extends AbstractEntity {
 		this.defaultAddress = defaultAddress;
 	}
 
+	@Override
+	public String toString() {
+		return "Address [street=" + street + ", city=" + city + ", state=" + state + ", zipcode=" + zipcode
+				+ ", country=" + country + ", defaultAddress=" + defaultAddress + ", user=" + user + "]";
+	}
+
 
 
 

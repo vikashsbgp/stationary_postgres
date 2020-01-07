@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.stationary.demo.dto.AddressResponseDTO;
+import com.stationary.demo.dto.OrderRequest;
 import com.stationary.demo.entities.Address;
 import com.stationary.demo.entities.User;
 import com.stationary.demo.repos.AddressRepository;
@@ -74,6 +75,35 @@ public class AddressServiceImpl implements AddressService {
 		addressRepository.save(address);
 		return addressdto;
 	}
+	
+	@Override
+	public AddressResponseDTO saveAddressToAddressResponseDTO(Address address) {
+		AddressResponseDTO addressdto = new AddressResponseDTO();
+		addressdto.setCity(address.getCity());
+		addressdto.setCountry(address.getCountry());
+		addressdto.setState(address.getState());
+		addressdto.setStreet(address.getStreet());
+		addressdto.setZipcode(address.getZipcode());
+		addressdto.setId(address.getId());
+		return addressdto;
+		
+	}
+	
+	@Override
+	public Address getOrderAddress(OrderRequest orderReq) {
+		Address address=new Address();
+		if(orderReq.getAddress()==null) {
+			address = addressRepository.findByDefaultAddress();
+			
+		}
+		else {
+			address=addressRepository.findById(orderReq.getAddress().getId()).get();
+			address = orderReq.getAddress();
+			
+		}
+		return address;
+	}
+	
 
 
 }

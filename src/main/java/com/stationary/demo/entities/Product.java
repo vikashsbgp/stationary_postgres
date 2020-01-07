@@ -2,23 +2,30 @@ package com.stationary.demo.entities;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 
 @Entity
 public class Product extends AbstractEntity {
 
+	@Column(columnDefinition = "text")
 	private String name;
+	
+	@Column(columnDefinition = "text")
 	private String description;
+	
+	@Column(columnDefinition = "text")
 	private String brand;
+	
 	private double price;
 	private int quantity;
 	
 	@ManyToMany(mappedBy="product")
-	private List<Cart> carts;
+	private transient List<Cart> carts;
 	
 	@ManyToMany(mappedBy="product")
-	private List<Order> order;
+	private transient List<Order> order;
 
 	public String getName() {
 		return name;
@@ -66,6 +73,12 @@ public class Product extends AbstractEntity {
 
 	public void setOrder(List<Order> order) {
 		this.order = order;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [name=" + name + ", description=" + description + ", brand=" + brand + ", price=" + price
+				+ ", quantity=" + quantity + "]";
 	}
 
 }

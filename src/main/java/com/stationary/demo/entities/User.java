@@ -134,4 +134,11 @@ public class User extends AbstractEntity {
 		this.order = order;
 	}
 
+	@Override
+	public String toString() {
+		return "User [firstName=" + firstName + ", lastName=" + lastName + ", password=" + password + ", email=" + email
+				+ ", mobile=" + mobile + ", addresses=" + addresses + ", order=" + order + ", cart=" + cart
+				+ ", active=" + active + ", roleName=" + roleName + "]";
+	}
+
 }

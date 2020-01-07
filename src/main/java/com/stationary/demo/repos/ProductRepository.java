@@ -1,6 +1,9 @@
 package com.stationary.demo.repos;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.stationary.demo.entities.Product;
@@ -8,6 +11,7 @@ import com.stationary.demo.entities.Product;
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
 	
-	
+	@Query(value = "select id, name, description, brand, price, quantity from product", nativeQuery = true)
+	List<Product> findAllProducts();
 
 }

@@ -69,4 +69,10 @@ public class AddressResponseDTO {
 		this.defaultAddress = defaultAddress;
 	}
 
+	@Override
+	public String toString() {
+		return "AddressResponseDTO [id=" + id + ", street=" + street + ", city=" + city + ", state=" + state
+				+ ", zipcode=" + zipcode + ", country=" + country + ", defaultAddress=" + defaultAddress + "]";
+	}
+
 }

@@ -2,6 +2,8 @@ package com.stationary.demo.dto;
 
 import org.springframework.stereotype.Component;
 
+import com.stationary.demo.entities.ProductStatus;
+
 @Component
 public class ProductResponseDTO {
 
@@ -11,6 +13,7 @@ public class ProductResponseDTO {
 	private String brand;
 	private double price;
 	private int quantity;
+	private ProductStatus status;
 
 	public long getId() {
 		return id;
@@ -59,5 +62,20 @@ public class ProductResponseDTO {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
+
+	public ProductStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(ProductStatus status) {
+		this.status = status;
+	}
+
+	@Override
+	public String toString() {
+		return "ProductResponseDTO [id=" + id + ", name=" + name + ", description=" + description + ", brand=" + brand
+				+ ", price=" + price + ", quantity=" + quantity + ", status=" + status + "]";
+	}
+
 
 }
